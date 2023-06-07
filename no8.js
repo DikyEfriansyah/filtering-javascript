@@ -1,19 +1,14 @@
 const arr = ["tik", "tok", "toko", "tik"]
 
 function isPalindrome(arr){
+   for(let i = 1; i <= arr.length/2;i++){
+      let isSame = arr[i-1].toLowerCase() === arr[arr.length - i].toLowerCase();
+      if(!isSame){
+         return false;
+      }
+   }
 
-    let str = arr.slice(0)
-    var pal = str.toString().split("").reverse().join("").split(",");
-
-
-    for (let i = 0; i < arr.length; i++) {
-       for (let k = 0; k < pal.length; k++) {
-          if (arr[i] == pal[k]) {
-             return false;
-          }  
-          return true;
-        }
-    }
+   return true;
 }
 
 console.log(isPalindrome(arr))
