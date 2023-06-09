@@ -4,13 +4,14 @@ function addSum(arr, num){
 
     let sum = [];
 
-  for(let i in arr){
-    for(let j in arr){
-        if(arr[i]+arr[j] === num){
-            sum.push([arr[i], arr[j]])
-        }
+    for(let i=0;i<arr.length;i++){
+      for(let j=0;j<arr.length;j++){
+          if(j!==i && arr[i]+arr[j]===num){
+              sum.push(i,j);
+              return sum;
+          }
+      }
     }
-  }
   return sum;
 }
 
